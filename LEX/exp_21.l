@@ -1,0 +1,21 @@
+/* Lex Program to check valid Mobile Number */
+
+%%
+
+[1-9][0-9]{9} {printf("\nMobile Number Valid\n");}
+
+.+ {printf("\nMobile Number Invalid\n");}
+
+%%
+
+int yywrap()
+{
+	return 1;
+}
+int main()
+{
+	printf("\nEnter Mobile Number : ");
+	yylex();
+	printf("\n");
+	return 0;
+}
